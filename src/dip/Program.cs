@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace dip
 {
@@ -6,7 +7,16 @@ namespace dip
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+          var parent = new Person {Name = "John"};
+          var child1 = new Person {Name = "Chris"};
+          var child2 = new Person {Name = "Matt"};
+
+          // low-level module
+          var relationships = new Relationships();
+          relationships.AddParentAndChild(parent, child1);
+          relationships.AddParentAndChild(parent, child2);
+
+          new Research(relationships);
         }
     }
 }
